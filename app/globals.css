@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to use new organic theme palette */
+  --background: #ffffff; /* Pure white */
+  --foreground: #004434; /* Dark forest green */
+  --card: #f6f6f1; /* Light ivory white */
+  --card-foreground: #004434;
+  --popover: #ffffff;
+  --popover-foreground: #004434;
+  --primary: #004b3c; /* Dark teal green */
+  --primary-foreground: #ffffff;
+  --secondary: #004d40; /* Deep green */
+  --secondary-foreground: #ffffff;
+  --muted: #f5f5f0; /* Light grayish white */
+  --muted-foreground: #004434;
+  --accent: #fff4d1; /* Soft cream */
+  --accent-foreground: #004434;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: #f5f5f1; /* Off-white */
+  --input: #f9f9f9; /* Very light gray */
+  --ring: oklch(0.35 0 0 / 0.1);
+  --chart-1: #004b3c;
+  --chart-2: #004d40;
+  --chart-3: #004434;
+  --chart-4: #fff4d1;
+  --chart-5: #fff4d0;
+  --radius: 0.5rem;
+  --sidebar: #f6f6f1;
+  --sidebar-foreground: #004434;
+  --sidebar-primary: #004b3c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff4d1;
+  --sidebar-accent-foreground: #004434;
+  --sidebar-border: #f5f5f1;
+  --sidebar-ring: oklch(0.35 0 0 / 0.1);
+}
+
+.dark {
+  /* Updated dark mode colors to complement the organic theme */
+  --background: #004434;
+  --foreground: #f6f6f1;
+  --card: #004d40;
+  --card-foreground: #f6f6f1;
+  --popover: #004434;
+  --popover-foreground: #f6f6f1;
+  --primary: #fff4d1;
+  --primary-foreground: #004434;
+  --secondary: #f5f5f0;
+  --secondary-foreground: #004434;
+  --muted: #004b3c;
+  --muted-foreground: #f5f5f1;
+  --accent: #fff4d0;
+  --accent-foreground: #004434;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: #004b3c;
+  --input: #004d40;
+  --ring: oklch(0.439 0 0);
+  --chart-1: #fff4d1;
+  --chart-2: #f5f5f0;
+  --chart-3: #f6f6f1;
+  --chart-4: #004b3c;
+  --chart-5: #004d40;
+  --sidebar: #004b3c;
+  --sidebar-foreground: #f6f6f1;
+  --sidebar-primary: #fff4d1;
+  --sidebar-primary-foreground: #004434;
+  --sidebar-accent: #fff4d0;
+  --sidebar-accent-foreground: #004434;
+  --sidebar-border: #004d40;
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added modern typography fonts */
+  --font-sans: "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Added modern typography styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold;
+  }
+}
